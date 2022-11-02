@@ -7,9 +7,9 @@ const bodyParser = require('body-parser')
 const { Routes } = require('./Routes/Routes')
 
 Routes.forEach(route => {
-    app.route.method(route.path, route.execute)
-    
-});
+    app[route.method](route.path, (req, res) =>{res.send(route.execute(req))})
+})
+
 // const route = {
 //     path: "/pessoa"
 //     verb: "get"
@@ -29,4 +29,5 @@ Routes.forEach(route => {
 //     route.action(req, rest)
 // })
 
-
+const port = process.env.PORT || 5000
+app.listen(port, () => console.log(`Listening on port ${port}...`))

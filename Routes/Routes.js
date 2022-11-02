@@ -1,5 +1,7 @@
 
 const  {HealthCheckRoute} = require("./HealthCheckRoute")
+const {GetBirthdayPerson} = require("./GetBirthdayPerson")
 
-export const Routes = [HealthCheckRoute]
+const Routes = [HealthCheckRoute, GetBirthdayPerson]
+exports.Routes = Routes
 
