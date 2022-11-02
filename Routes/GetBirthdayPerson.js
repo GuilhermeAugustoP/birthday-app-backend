@@ -15,7 +15,8 @@ const GetBirthdayPerson = {
           const DateSplit = formatDate.split('/')
           const DayMonth = DateSplit[0].concat('/', DateSplit[1])
         const Birthdayperson = Contacts.filter(Contacts => Contacts.birthdate.includes(DayMonth))
-        return Birthdayperson
+        const BirthdayName = Birthdayperson.map(Contact => Contact.name)
+        return BirthdayName
     }
 }
 exports.GetBirthdayPerson = GetBirthdayPerson
