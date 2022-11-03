@@ -1,6 +1,7 @@
 
-export const HealthCheckRoute = {
+const HealthCheckRoute = {
     path: '/api/healthcheck/liveness',
-    method: 'healthcheck',
+    method: 'get',
     execute: () => 'Ok'
 }
+exports.HealthCheckRoute = HealthCheckRoute
